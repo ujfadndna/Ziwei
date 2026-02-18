@@ -1,0 +1,8 @@
+packages:
+  - "packages/*"
+
+# pnpm v10 blocks dependency build scripts by default.
+# Vite relies on esbuild, so we explicitly allow it to run its postinstall script.
+onlyBuiltDependencies:
+  - esbuild
+  - electron

@@ -1,0 +1,96 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`buildBaziChart golden fixtures > matches golden snapshot: after-lichun-2024 1`] = `
+{
+  "dayMaster": "戊",
+  "firstLuckPillar": "丁卯",
+  "flowYear": {
+    "stemBranch": "甲辰",
+    "year": 2024,
+  },
+  "luckDirection": "forward",
+  "luckStartAge": 4.86,
+  "pillars": {
+    "day": "戊戌",
+    "hour": "丁巳",
+    "month": "丙寅",
+    "year": "甲辰",
+  },
+}
+`;
+
+exports[`buildBaziChart golden fixtures > matches golden snapshot: before-lichun-2024 1`] = `
+{
+  "dayMaster": "丁",
+  "firstLuckPillar": "甲子",
+  "flowYear": {
+    "stemBranch": "甲辰",
+    "year": 2024,
+  },
+  "luckDirection": "backward",
+  "luckStartAge": 4.81,
+  "pillars": {
+    "day": "丁酉",
+    "hour": "乙巳",
+    "month": "乙丑",
+    "year": "癸卯",
+  },
+}
+`;
+
+exports[`buildBaziChart golden fixtures > matches golden snapshot: female-1985-afternoon 1`] = `
+{
+  "dayMaster": "庚",
+  "firstLuckPillar": "癸未",
+  "flowYear": {
+    "stemBranch": "戊申",
+    "year": 2028,
+  },
+  "luckDirection": "forward",
+  "luckStartAge": 0.14,
+  "pillars": {
+    "day": "庚寅",
+    "hour": "癸未",
+    "month": "壬午",
+    "year": "乙丑",
+  },
+}
+`;
+
+exports[`buildBaziChart golden fixtures > matches golden snapshot: male-1990-morning 1`] = `
+{
+  "dayMaster": "庚",
+  "firstLuckPillar": "丙子",
+  "flowYear": {
+    "stemBranch": "丙午",
+    "year": 2026,
+  },
+  "luckDirection": "backward",
+  "luckStartAge": 3.44,
+  "pillars": {
+    "day": "庚辰",
+    "hour": "庚辰",
+    "month": "丁丑",
+    "year": "己巳",
+  },
+}
+`;
+
+exports[`buildBaziChart golden fixtures > matches golden snapshot: new-york-timezone 1`] = `
+{
+  "dayMaster": "戊",
+  "firstLuckPillar": "丙寅",
+  "flowYear": {
+    "stemBranch": "己酉",
+    "year": 2029,
+  },
+  "luckDirection": "forward",
+  "luckStartAge": 1.38,
+  "pillars": {
+    "day": "戊寅",
+    "hour": "壬戌",
+    "month": "乙丑",
+    "year": "癸卯",
+  },
+}
+`;
