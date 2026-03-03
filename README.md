@@ -1,6 +1,8 @@
-# Ziwei Pro - 紫微斗数专业排盘系统
-
-一站式中国传统命理排盘工具，集成紫微斗数、八字、奇门遁甲、六爻四大术数系统。
+<div align="center">
+  <img src="logo.png" alt="Ziwei Pro Logo" width="128" height="128">
+  <h1>Ziwei Pro - 紫微斗数专业排盘系统</h1>
+  <p>一站式中国传统命理排盘工具，集成紫微斗数、八字、奇门遁甲、六爻四大术数系统。</p>
+</div>
 
 ## 功能概览
 
