@@ -375,7 +375,7 @@ export default function ChartSVGWenmo() {
         />
       </g>
 
-      {地支.map((branch) => {
+      {地支.map((branch, branchIndex) => {
         const pos = BRANCH_GRID_POS[branch];
         const palace = palaceByBranch.get(branch);
         if (!pos || !palace) return null;
@@ -408,15 +408,15 @@ export default function ChartSVGWenmo() {
             isSearchHit={isSearchPalace}
             hasSelectedStar={hasSelectedStar}
             searchHitStarName={isSearchPalace ? searchResult?.starName ?? null : null}
-            cycleMarkers={cycleMarkersByPalace.get(palace.index) ?? EMPTY_MARKERS}
-            currentFlowStars={flowStarsByPalace.get(palace.index) ?? EMPTY_STARS}
+            cycleMarkers={cycleMarkersByPalace.get(branchIndex) ?? EMPTY_MARKERS}
+            currentFlowStars={flowStarsByPalace.get(branchIndex) ?? EMPTY_STARS}
             flyInMutagens={flyInboundByPalace.get(palace.index) ?? EMPTY_FLY_MUTAGENS}
-            yearlyAges={palaceAgeSummary.yearlyAgesByPalace.get(palace.index) ?? EMPTY_AGES}
-            smallLimitAges={palaceAgeSummary.smallAgesByPalace.get(palace.index) ?? EMPTY_AGES}
-            decadalRange={palaceAgeSummary.decadalRangeByPalace.get(palace.index) ?? null}
+            yearlyAges={palaceAgeSummary.yearlyAgesByPalace.get(branchIndex) ?? EMPTY_AGES}
+            smallLimitAges={palaceAgeSummary.smallAgesByPalace.get(branchIndex) ?? EMPTY_AGES}
+            decadalRange={palaceAgeSummary.decadalRangeByPalace.get(branchIndex) ?? null}
             isRelationFocus={sanheFocusPalaces.has(palace.index)}
             isOppositeWarning={flyOppositeWarningPalaces.has(palace.index)}
-            isCycleChanged={cycleChangedPalaceSet.has(palace.index)}
+            isCycleChanged={cycleChangedPalaceSet.has(branchIndex)}
           />
         );
       })}

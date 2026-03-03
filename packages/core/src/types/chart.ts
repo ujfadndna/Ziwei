@@ -43,6 +43,8 @@ export interface BirthInfo {
    * 说明：0-11 通常对应子-亥；12 用于占位/不详等特殊情况。
    */
   timeIndex: TimeIndex;
+  /** 用户原始选择的民用时辰（真太阳时修正前）。缺省时等同于 timeIndex。 */
+  civilTimeIndex?: TimeIndex;
 
   /** 出生地（可选） */
   location?: BirthLocation;

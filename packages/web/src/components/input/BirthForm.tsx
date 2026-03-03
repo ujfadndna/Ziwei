@@ -1,4 +1,5 @@
-import type { BirthInfo, CoinFace, CoinThreeThrow, Gender, TimeIndex, YinYang } from "@ziwei/core";
+import type { BirthInfo, BirthLocation, CoinFace, CoinThreeThrow, Gender, TimeIndex, YinYang } from "@ziwei/core";
+import { calculateTrueSolarTime, searchCities, type CityEntry, type TrueSolarTimeResult } from "@ziwei/core";
 
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 
@@ -138,6 +139,7 @@ export default function BirthForm() {
     return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
   });
   const [timeIndex, setTimeIndex] = useState<TimeIndex>(() => {
+    if (typeof lastBirth?.civilTimeIndex === "number") return lastBirth.civilTimeIndex;
     if (typeof lastBirth?.timeIndex === "number") return lastBirth.timeIndex;
     if (!lastBirth?.datetime) return 4;
     const d = new Date(lastBirth.datetime);
@@ -146,6 +148,9 @@ export default function BirthForm() {
   });
   const [manualCastingEnabled, setManualCastingEnabled] = useState<boolean>(false);
   const [manualLineThrows, setManualLineThrows] = useState<ManualCoinLine[]>(() => createDefaultManualLines());
+  const [cityQuery, setCityQuery] = useState<string>("");
+  const [selectedCity, setSelectedCity] = useState<CityEntry | null>(null);
+  const [useTrueSolarTime, setUseTrueSolarTime] = useState<boolean>(false);
 
   useEffect(() => {
     if (!lastBirth?.datetime) return;
@@ -154,7 +159,28 @@ export default function BirthForm() {
 
     setGender(lastBirth.gender);
     setDate(`${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`);
-    setTimeIndex(lastBirth.timeIndex);
+    setTimeIndex(lastBirth.civilTimeIndex ?? lastBirth.timeIndex);
+
+    if (lastBirth?.location?.name) {
+      const matches = searchCities(lastBirth.location.name, 1);
+      if (matches.length > 0) {
+        const firstMatch = matches[0];
+        if (firstMatch) {
+          setSelectedCity(firstMatch);
+          setCityQuery(firstMatch.name);
+          // Do NOT auto-enable - let user manually check the box
+          setUseTrueSolarTime(false);
+        }
+      } else {
+        setSelectedCity(null);
+        setCityQuery(lastBirth.location.name);
+        setUseTrueSolarTime(false);
+      }
+    } else {
+      setSelectedCity(null);
+      setCityQuery("");
+      setUseTrueSolarTime(false);
+    }
   }, [lastBirth]);
 
   const datetimeValue = useMemo(() => {
@@ -163,6 +189,16 @@ export default function BirthForm() {
     const hour = hourFromTimeIndex(timeIndex);
     return `${date}T${pad2(hour)}:00:00`;
   }, [date, timeIndex]);
+
+  const cityResults = useMemo(() => {
+    if (!cityQuery.trim()) return [];
+    return searchCities(cityQuery.trim(), 10);
+  }, [cityQuery]);
+
+  const trueSolarResult = useMemo<TrueSolarTimeResult | null>(() => {
+    if (!useTrueSolarTime || !selectedCity || !datetimeValue) return null;
+    return calculateTrueSolarTime(datetimeValue, timeIndex, selectedCity.longitude);
+  }, [useTrueSolarTime, selectedCity, datetimeValue, timeIndex]);
 
   const manualPreviews = useMemo(() => {
     return manualLineThrows.map((line) => castPreviewFromLine(line));
@@ -192,11 +228,24 @@ export default function BirthForm() {
     e.preventDefault();
     if (!datetimeValue) return;
 
+    const location: BirthLocation | undefined = selectedCity
+      ? {
+          name: selectedCity.name,
+          latitude: selectedCity.latitude,
+          longitude: selectedCity.longitude,
+          timeZone: "Asia/Shanghai",
+        }
+      : undefined;
+
     const birth: BirthInfo = {
       gender,
-      datetime: datetimeValue,
-      timeIndex,
+      datetime: trueSolarResult?.adjustedDatetime ?? datetimeValue,
+      timeIndex: trueSolarResult?.adjustedTimeIndex ?? timeIndex,
+      civilTimeIndex: trueSolarResult ? timeIndex : undefined,
     };
+    if (location) {
+      birth.location = location;
+    }
 
     const liuyaoOptions =
       appMode === "liuyao" && manualCastingEnabled ? { liuyaoLineThrows: manualCoinThrows } : undefined;
@@ -350,6 +399,94 @@ export default function BirthForm() {
               onChange={(e) => setEnableTrace(e.target.checked)}
             />
           </label>
+
+          <label className="block">
+            <div className="text-[11px] surface-label">出生城市</div>
+            <div className="relative mt-1">
+              <input
+                type="text"
+                className="w-full rounded-md border border-zinc-200 bg-white px-2 py-1 text-sm dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100"
+                placeholder="输入城市名搜索..."
+                value={cityQuery}
+                onChange={(e) => {
+                  setCityQuery(e.target.value);
+                  if (!e.target.value.trim()) {
+                    setSelectedCity(null);
+                    setUseTrueSolarTime(false);
+                  }
+                }}
+              />
+              {cityResults.length > 0 && !selectedCity && (
+                <ul className="absolute z-10 mt-1 max-h-40 w-full overflow-auto rounded-md border border-zinc-200 bg-white text-sm shadow-lg dark:border-slate-500 dark:bg-slate-900">
+                  {cityResults.map((city) => (
+                    <li key={`${city.province}-${city.name}`}>
+                      <button
+                        type="button"
+                        className="w-full px-2 py-1 text-left hover:bg-zinc-100 dark:hover:bg-slate-800"
+                        onClick={() => {
+                          setSelectedCity(city);
+                          setCityQuery(city.name);
+                        }}
+                      >
+                        {city.name} ({city.province}) {city.longitude.toFixed(1)}°E
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            {selectedCity && (
+              <div className="mt-1 flex items-center justify-between text-[11px]">
+                <span className="surface-help">
+                  {selectedCity.name} ({selectedCity.province}) {selectedCity.longitude.toFixed(2)}°E
+                </span>
+                <button
+                  type="button"
+                  className="text-red-400 hover:text-red-300"
+                  onClick={() => {
+                    setSelectedCity(null);
+                    setCityQuery("");
+                    setUseTrueSolarTime(false);
+                  }}
+                >
+                  清除
+                </button>
+              </div>
+            )}
+          </label>
+
+          <label className="flex items-center justify-between gap-2 rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm dark:border-slate-500 dark:bg-slate-900">
+            <div className="flex flex-col">
+              <span className="text-sm">使用真太阳时</span>
+              <span className="text-[11px] surface-help">根据出生城市经度修正北京时间</span>
+            </div>
+            <input
+              type="checkbox"
+              className="h-4 w-4 rounded border-zinc-300 dark:border-slate-500"
+              checked={useTrueSolarTime}
+              onChange={(e) => setUseTrueSolarTime(e.target.checked)}
+              disabled={!selectedCity}
+            />
+          </label>
+
+          {trueSolarResult && (
+            <div className="rounded-md border border-zinc-200 bg-white px-2 py-1.5 text-[11px] dark:border-slate-500 dark:bg-slate-900">
+              <div className="surface-help">
+                修正: {trueSolarResult.totalAdjustmentMinutes >= 0 ? "+" : ""}
+                {trueSolarResult.totalAdjustmentMinutes.toFixed(1)} 分钟（经度{" "}
+                {trueSolarResult.breakdown.longitudeCorrectionMinutes >= 0 ? "+" : ""}
+                {trueSolarResult.breakdown.longitudeCorrectionMinutes.toFixed(1)}, 时差方程{" "}
+                {trueSolarResult.breakdown.equationOfTimeMinutes >= 0 ? "+" : ""}
+                {trueSolarResult.breakdown.equationOfTimeMinutes.toFixed(1)}）
+              </div>
+              {trueSolarResult.timeIndexChanged && (
+                <div className="mt-0.5 font-semibold text-amber-400">
+                  时辰变化: {TIME_INDEX_OPTIONS[trueSolarResult.breakdown.originalTimeIndex]?.label} →{" "}
+                  {TIME_INDEX_OPTIONS[trueSolarResult.adjustedTimeIndex]?.label}
+                </div>
+              )}
+            </div>
+          )}
 
           <div className="text-[11px] surface-help">
             datetime(由时辰生成): <span className="font-mono">{datetimeValue || "-"}</span>

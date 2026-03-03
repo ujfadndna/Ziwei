@@ -170,4 +170,14 @@ export * from "./rule-engine";
 // 构建器
 export { ChartBuilder, buildChart, type BuildOptions, type ChartResult } from "./builder";
 
+// 真太阳时
+export {
+  calculateTrueSolarTime,
+  searchCities,
+  getCitiesByProvince,
+  CHINA_CITIES,
+  type CityEntry,
+  type TrueSolarTimeResult,
+} from "./solar-time";
+
 export const ZIWEI_CORE_PLACEHOLDER = "core-ready";
