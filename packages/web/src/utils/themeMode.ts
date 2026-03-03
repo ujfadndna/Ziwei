@@ -2,7 +2,7 @@ import type { AppMode, ThemePreference, UiTheme } from "../types/ui";
 
 export const THEME_PREFERENCE_STORAGE_KEY = "ziwei:web:theme:preference-v1";
 
-const UI_THEMES: readonly UiTheme[] = ["ziwei", "bazi", "qimen"];
+const UI_THEMES: readonly UiTheme[] = ["ziwei", "bazi", "qimen", "liuyao"];
 const THEME_PREFERENCES: readonly ThemePreference[] = ["auto", ...UI_THEMES];
 
 function isUiTheme(value: string): value is UiTheme {
@@ -16,6 +16,7 @@ function isThemePreference(value: string): value is ThemePreference {
 export function defaultThemeByAppMode(mode: AppMode): UiTheme {
   if (mode === "bazi") return "bazi";
   if (mode === "qimen") return "qimen";
+  if (mode === "liuyao") return "liuyao";
   return "ziwei";
 }
 
@@ -33,4 +34,3 @@ export function parseUiTheme(raw: string | null | undefined): UiTheme | null {
   if (!raw) return null;
   return isUiTheme(raw) ? raw : null;
 }
-

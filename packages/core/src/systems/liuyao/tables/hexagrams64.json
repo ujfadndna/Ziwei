@@ -1,0 +1,648 @@
+{
+  "id": "default_shiying_v1",
+  "version": "v1",
+  "codeOrder": "bottom_to_top",
+  "description": "64\u5366\u57fa\u7840\u4fe1\u606f\uff08\u542b\u5366\u5bab\u4e0e\u4e16\u5e94\uff09",
+  "entries": [
+    {
+      "code": "000000",
+      "id": 2,
+      "name": "\u5764\u4e3a\u5730",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u5764",
+      "palace": "\u5764",
+      "shiLine": 6,
+      "yingLine": 3
+    },
+    {
+      "code": "000001",
+      "id": 23,
+      "name": "\u5c71\u5730\u5265",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u5764",
+      "palace": "\u4e7e",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "000010",
+      "id": 8,
+      "name": "\u6c34\u5730\u6bd4",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u5764",
+      "palace": "\u5764",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "000011",
+      "id": 20,
+      "name": "\u98ce\u5730\u89c2",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u5764",
+      "palace": "\u4e7e",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "000100",
+      "id": 16,
+      "name": "\u96f7\u5730\u8c6b",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u5764",
+      "palace": "\u9707",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "000101",
+      "id": 35,
+      "name": "\u706b\u5730\u664b",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u5764",
+      "palace": "\u4e7e",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "000110",
+      "id": 45,
+      "name": "\u6cfd\u5730\u8403",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u5764",
+      "palace": "\u5151",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "000111",
+      "id": 12,
+      "name": "\u5929\u5730\u5426",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u5764",
+      "palace": "\u4e7e",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "001000",
+      "id": 15,
+      "name": "\u5730\u5c71\u8c26",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u826e",
+      "palace": "\u5151",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "001001",
+      "id": 52,
+      "name": "\u826e\u4e3a\u5c71",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u826e",
+      "palace": "\u826e",
+      "shiLine": 6,
+      "yingLine": 3
+    },
+    {
+      "code": "001010",
+      "id": 39,
+      "name": "\u6c34\u5c71\u8e47",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u826e",
+      "palace": "\u5151",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "001011",
+      "id": 53,
+      "name": "\u98ce\u5c71\u6e10",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u826e",
+      "palace": "\u826e",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "001100",
+      "id": 62,
+      "name": "\u96f7\u5c71\u5c0f\u8fc7",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u826e",
+      "palace": "\u5151",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "001101",
+      "id": 56,
+      "name": "\u706b\u5c71\u65c5",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u826e",
+      "palace": "\u79bb",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "001110",
+      "id": 31,
+      "name": "\u6cfd\u5c71\u54b8",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u826e",
+      "palace": "\u5151",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "001111",
+      "id": 33,
+      "name": "\u5929\u5c71\u9041",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u826e",
+      "palace": "\u4e7e",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "010000",
+      "id": 7,
+      "name": "\u5730\u6c34\u5e08",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u574e",
+      "palace": "\u574e",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "010001",
+      "id": 4,
+      "name": "\u5c71\u6c34\u8499",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u574e",
+      "palace": "\u79bb",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "010010",
+      "id": 29,
+      "name": "\u574e\u4e3a\u6c34",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u574e",
+      "palace": "\u574e",
+      "shiLine": 6,
+      "yingLine": 3
+    },
+    {
+      "code": "010011",
+      "id": 59,
+      "name": "\u98ce\u6c34\u6da3",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u574e",
+      "palace": "\u79bb",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "010100",
+      "id": 40,
+      "name": "\u96f7\u6c34\u89e3",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u574e",
+      "palace": "\u9707",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "010101",
+      "id": 64,
+      "name": "\u706b\u6c34\u672a\u6d4e",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u574e",
+      "palace": "\u79bb",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "010110",
+      "id": 47,
+      "name": "\u6cfd\u6c34\u56f0",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u574e",
+      "palace": "\u5151",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "010111",
+      "id": 6,
+      "name": "\u5929\u6c34\u8bbc",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u574e",
+      "palace": "\u79bb",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "011000",
+      "id": 46,
+      "name": "\u5730\u98ce\u5347",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u9707",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "011001",
+      "id": 18,
+      "name": "\u5c71\u98ce\u86ca",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u5dfd",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "011010",
+      "id": 48,
+      "name": "\u6c34\u98ce\u4e95",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u9707",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "011011",
+      "id": 57,
+      "name": "\u5dfd\u4e3a\u98ce",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u5dfd",
+      "shiLine": 6,
+      "yingLine": 3
+    },
+    {
+      "code": "011100",
+      "id": 32,
+      "name": "\u96f7\u98ce\u6052",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u9707",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "011101",
+      "id": 50,
+      "name": "\u706b\u98ce\u9f0e",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u79bb",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "011110",
+      "id": 28,
+      "name": "\u6cfd\u98ce\u5927\u8fc7",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u9707",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "011111",
+      "id": 44,
+      "name": "\u5929\u98ce\u59e4",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u5dfd",
+      "palace": "\u4e7e",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "100000",
+      "id": 24,
+      "name": "\u5730\u96f7\u590d",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u9707",
+      "palace": "\u5764",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "100001",
+      "id": 27,
+      "name": "\u5c71\u96f7\u9890",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u9707",
+      "palace": "\u5dfd",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "100010",
+      "id": 3,
+      "name": "\u6c34\u96f7\u5c6f",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u9707",
+      "palace": "\u574e",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "100011",
+      "id": 42,
+      "name": "\u98ce\u96f7\u76ca",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u9707",
+      "palace": "\u5dfd",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "100100",
+      "id": 51,
+      "name": "\u9707\u4e3a\u96f7",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u9707",
+      "palace": "\u9707",
+      "shiLine": 6,
+      "yingLine": 3
+    },
+    {
+      "code": "100101",
+      "id": 21,
+      "name": "\u706b\u96f7\u566c\u55d1",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u9707",
+      "palace": "\u5dfd",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "100110",
+      "id": 17,
+      "name": "\u6cfd\u96f7\u968f",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u9707",
+      "palace": "\u9707",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "100111",
+      "id": 25,
+      "name": "\u5929\u96f7\u65e0\u5984",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u9707",
+      "palace": "\u5dfd",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "101000",
+      "id": 36,
+      "name": "\u5730\u706b\u660e\u5937",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u574e",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "101001",
+      "id": 22,
+      "name": "\u5c71\u706b\u8d32",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u826e",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "101010",
+      "id": 63,
+      "name": "\u6c34\u706b\u65e2\u6d4e",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u574e",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "101011",
+      "id": 37,
+      "name": "\u98ce\u706b\u5bb6\u4eba",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u5dfd",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "101100",
+      "id": 55,
+      "name": "\u96f7\u706b\u4e30",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u574e",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "101101",
+      "id": 30,
+      "name": "\u79bb\u4e3a\u706b",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u79bb",
+      "shiLine": 6,
+      "yingLine": 3
+    },
+    {
+      "code": "101110",
+      "id": 49,
+      "name": "\u6cfd\u706b\u9769",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u574e",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "101111",
+      "id": 13,
+      "name": "\u5929\u706b\u540c\u4eba",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u79bb",
+      "palace": "\u79bb",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "110000",
+      "id": 19,
+      "name": "\u5730\u6cfd\u4e34",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u5151",
+      "palace": "\u5764",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "110001",
+      "id": 41,
+      "name": "\u5c71\u6cfd\u635f",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u5151",
+      "palace": "\u826e",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "110010",
+      "id": 60,
+      "name": "\u6c34\u6cfd\u8282",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u5151",
+      "palace": "\u574e",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "110011",
+      "id": 61,
+      "name": "\u98ce\u6cfd\u4e2d\u5b5a",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u5151",
+      "palace": "\u826e",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "110100",
+      "id": 54,
+      "name": "\u96f7\u6cfd\u5f52\u59b9",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u5151",
+      "palace": "\u5151",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "110101",
+      "id": 38,
+      "name": "\u706b\u6cfd\u777d",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u5151",
+      "palace": "\u826e",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "110110",
+      "id": 58,
+      "name": "\u5151\u4e3a\u6cfd",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u5151",
+      "palace": "\u5151",
+      "shiLine": 6,
+      "yingLine": 3
+    },
+    {
+      "code": "110111",
+      "id": 10,
+      "name": "\u5929\u6cfd\u5c65",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u5151",
+      "palace": "\u826e",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "111000",
+      "id": 11,
+      "name": "\u5730\u5929\u6cf0",
+      "upperTrigram": "\u5764",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u5764",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "111001",
+      "id": 26,
+      "name": "\u5c71\u5929\u5927\u755c",
+      "upperTrigram": "\u826e",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u826e",
+      "shiLine": 2,
+      "yingLine": 5
+    },
+    {
+      "code": "111010",
+      "id": 5,
+      "name": "\u6c34\u5929\u9700",
+      "upperTrigram": "\u574e",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u5764",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "111011",
+      "id": 9,
+      "name": "\u98ce\u5929\u5c0f\u755c",
+      "upperTrigram": "\u5dfd",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u5dfd",
+      "shiLine": 1,
+      "yingLine": 4
+    },
+    {
+      "code": "111100",
+      "id": 34,
+      "name": "\u96f7\u5929\u5927\u58ee",
+      "upperTrigram": "\u9707",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u5764",
+      "shiLine": 4,
+      "yingLine": 1
+    },
+    {
+      "code": "111101",
+      "id": 14,
+      "name": "\u706b\u5929\u5927\u6709",
+      "upperTrigram": "\u79bb",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u4e7e",
+      "shiLine": 3,
+      "yingLine": 6
+    },
+    {
+      "code": "111110",
+      "id": 43,
+      "name": "\u6cfd\u5929\u592c",
+      "upperTrigram": "\u5151",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u5764",
+      "shiLine": 5,
+      "yingLine": 2
+    },
+    {
+      "code": "111111",
+      "id": 1,
+      "name": "\u4e7e\u4e3a\u5929",
+      "upperTrigram": "\u4e7e",
+      "lowerTrigram": "\u4e7e",
+      "palace": "\u4e7e",
+      "shiLine": 6,
+      "yingLine": 3
+    }
+  ]
+}

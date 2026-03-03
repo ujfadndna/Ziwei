@@ -1,11 +1,14 @@
 import {
   buildBaziChart,
   buildChart,
+  buildLiuyaoChart,
   buildQimenChart,
   type BaziChart,
   type BirthInfo,
   type Chart,
+  type CoinThreeThrow,
   type DerivationTrace,
+  type LiuyaoChart,
   type MutagenType,
   type QimenChart,
 } from "@ziwei/core";
@@ -40,6 +43,9 @@ import {
 
 type StarSearchResult = { palaceIndex: number; starName: string } | null;
 type FlyMutagenFilterState = Record<MutagenType, boolean>;
+interface BuildFromBirthOptions {
+  liuyaoLineThrows?: readonly CoinThreeThrow[];
+}
 
 const DEFAULT_FLY_MUTAGEN_FILTER: FlyMutagenFilterState = {
   化禄: true,
@@ -63,6 +69,7 @@ export interface ChartStoreState {
   buildError: string | null;
   baziChart: BaziChart | null;
   qimenChart: QimenChart | null;
+  liuyaoChart: LiuyaoChart | null;
   baziFlowYear: number;
   baziSelectedLuckIndex: number;
 
@@ -91,7 +98,7 @@ export interface ChartStoreState {
   searchResult: StarSearchResult;
 
   // Actions
-  buildFromBirth: (birth: BirthInfo) => void;
+  buildFromBirth: (birth: BirthInfo, options?: BuildFromBirthOptions) => void;
   setRuleSetId: (id: string) => void;
   setEnableTrace: (enabled: boolean) => void;
 
@@ -283,6 +290,20 @@ function buildQimenFromBirth(birth: BirthInfo): QimenChart {
   return buildQimenChart(birth);
 }
 
+function buildLiuyaoFromBirth(birth: BirthInfo, options?: BuildFromBirthOptions): LiuyaoChart {
+  const lineThrows = options?.liuyaoLineThrows;
+  if (lineThrows && lineThrows.length === 6) {
+    return buildLiuyaoChart({
+      ...birth,
+      casting: {
+        method: "coin_3",
+        lineThrows,
+      },
+    });
+  }
+  return buildLiuyaoChart(birth);
+}
+
 function resolveBaziLuckIndexByAge(chart: BaziChart, age: number): number {
   const pillars = chart.luck.pillars;
   if (!pillars.length) return 0;
@@ -302,6 +323,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   buildError: null,
   baziChart: null,
   qimenChart: null,
+  liuyaoChart: null,
   baziFlowYear: new Date().getFullYear(),
   baziSelectedLuckIndex: 0,
 
@@ -338,7 +360,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   searchQuery: "",
   searchResult: null,
 
-  buildFromBirth: (birth) => {
+  buildFromBirth: (birth, options) => {
     set({ isBuilding: true, buildError: null });
     try {
       const result = buildChart(birth, { ruleSetId: get().ruleSetId, enableTrace: get().enableTrace });
@@ -377,6 +399,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
       );
       const nextBazi = buildBaziFromBirthAndFlowYear(birth, nextTimeline.year);
       const nextQimen = buildQimenFromBirth(birth);
+      const nextLiuyao = buildLiuyaoFromBirth(birth, options);
       const nextBaziLuckIndex = resolveBaziLuckIndexByAge(nextBazi, nextTimeline.age);
 
       set({
@@ -385,6 +408,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
         lastBirth: birth,
         baziChart: nextBazi,
         qimenChart: nextQimen,
+        liuyaoChart: nextLiuyao,
         baziFlowYear: nextTimeline.year,
         baziSelectedLuckIndex: nextBaziLuckIndex,
         selection: {

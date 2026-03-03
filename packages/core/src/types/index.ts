@@ -5,5 +5,6 @@ export * from "./palace";
 export * from "./chart";
 export * from "./bazi";
 export * from "./qimen";
+export * from "./liuyao";
 export * from "./derivation";
 export * from "./ruleset";

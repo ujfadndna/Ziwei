@@ -33,8 +33,8 @@ export interface TimelineState {
 
 export type ChartLayout = "wenmo" | "round";
 
-export type AppMode = "ziwei" | "bazi" | "qimen";
-export type UiTheme = "ziwei" | "bazi" | "qimen";
+export type AppMode = "ziwei" | "bazi" | "qimen" | "liuyao";
+export type UiTheme = "ziwei" | "bazi" | "qimen" | "liuyao";
 export type ThemePreference = "auto" | UiTheme;
 
 // 显示模式

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { buildBaziChart, buildQimenChart, ZIWEI_CORE_PLACEHOLDER, 六十甲子, 天干, 地支 } from "./index";
+import { buildBaziChart, buildLiuyaoChart, buildQimenChart, ZIWEI_CORE_PLACEHOLDER, 六十甲子, 天干, 地支 } from "./index";
 
 describe("@ziwei/core", () => {
   it("exports a placeholder value", () => {
@@ -20,5 +20,9 @@ describe("@ziwei/core", () => {
 
   it("exports qimen builder entry", () => {
     expect(typeof buildQimenChart).toBe("function");
+  });
+
+  it("exports liuyao builder entry", () => {
+    expect(typeof buildLiuyaoChart).toBe("function");
   });
 });

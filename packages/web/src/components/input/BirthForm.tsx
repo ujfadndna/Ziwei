@@ -1,4 +1,4 @@
-import type { BirthInfo, Gender, TimeIndex } from "@ziwei/core";
+import type { BirthInfo, CoinFace, CoinThreeThrow, Gender, TimeIndex, YinYang } from "@ziwei/core";
 
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 
@@ -76,9 +76,56 @@ const TIME_INDEX_OPTIONS: Array<{ value: TimeIndex; label: string }> = [
   { value: 12, label: "不详" },
 ];
 
+type ManualCoinLine = [CoinFace, CoinFace, CoinFace];
+type ManualCastLabel = "老阴" | "少阳" | "少阴" | "老阳";
+
+interface ManualCastPreview {
+  sum: 6 | 7 | 8 | 9;
+  label: ManualCastLabel;
+  yinYang: YinYang;
+  moving: boolean;
+}
+
+const LINE_NAMES = ["初", "二", "三", "四", "五", "上"] as const;
+const COIN_SCORE: Record<CoinFace, 2 | 3> = {
+  heads: 3,
+  tails: 2,
+};
+
+function createDefaultManualLines(): ManualCoinLine[] {
+  return Array.from({ length: 6 }, () => ["heads", "tails", "tails"] as ManualCoinLine);
+}
+
+function toggleCoinFace(face: CoinFace): CoinFace {
+  return face === "heads" ? "tails" : "heads";
+}
+
+function castPreviewFromLine(line: ManualCoinLine): ManualCastPreview {
+  const sum = line.reduce((acc, face) => acc + COIN_SCORE[face], 0);
+  if (sum === 6) {
+    return { sum: 6, label: "老阴", yinYang: "阴", moving: true };
+  }
+  if (sum === 7) {
+    return { sum: 7, label: "少阳", yinYang: "阳", moving: false };
+  }
+  if (sum === 8) {
+    return { sum: 8, label: "少阴", yinYang: "阴", moving: false };
+  }
+  return { sum: 9, label: "老阳", yinYang: "阳", moving: true };
+}
+
+function yaoSymbol(yinYang: YinYang): string {
+  return yinYang === "阳" ? "─────" : "── ──";
+}
+
+function coinFaceText(face: CoinFace): string {
+  return face === "heads" ? "正(3)" : "反(2)";
+}
+
 export default function BirthForm() {
   const buildFromBirth = useChartStore((s) => s.buildFromBirth);
   const isBuilding = useChartStore((s) => s.isBuilding);
+  const appMode = useChartStore((s) => s.appMode);
   const enableTrace = useChartStore((s) => s.enableTrace);
   const setEnableTrace = useChartStore((s) => s.setEnableTrace);
   const lastBirth = useChartStore((s) => s.lastBirth);
@@ -97,6 +144,8 @@ export default function BirthForm() {
     if (Number.isNaN(d.getTime())) return 4;
     return timeIndexFromHour(d.getHours());
   });
+  const [manualCastingEnabled, setManualCastingEnabled] = useState<boolean>(false);
+  const [manualLineThrows, setManualLineThrows] = useState<ManualCoinLine[]>(() => createDefaultManualLines());
 
   useEffect(() => {
     if (!lastBirth?.datetime) return;
@@ -115,6 +164,30 @@ export default function BirthForm() {
     return `${date}T${pad2(hour)}:00:00`;
   }, [date, timeIndex]);
 
+  const manualPreviews = useMemo(() => {
+    return manualLineThrows.map((line) => castPreviewFromLine(line));
+  }, [manualLineThrows]);
+
+  const manualCoinThrows = useMemo(() => {
+    return manualLineThrows.map((line) => [line[0], line[1], line[2]] as CoinThreeThrow);
+  }, [manualLineThrows]);
+
+  function onToggleManualCoin(lineIdx: number, coinIdx: number): void {
+    setManualLineThrows((prev) =>
+      prev.map((line, idx) => {
+        if (idx !== lineIdx) return line;
+        const next: ManualCoinLine = [...line] as ManualCoinLine;
+        const current = next[coinIdx] ?? "heads";
+        next[coinIdx] = toggleCoinFace(current);
+        return next;
+      }),
+    );
+  }
+
+  function onResetManualCoins(): void {
+    setManualLineThrows(createDefaultManualLines());
+  }
+
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!datetimeValue) return;
@@ -125,7 +198,9 @@ export default function BirthForm() {
       timeIndex,
     };
 
-    buildFromBirth(birth);
+    const liuyaoOptions =
+      appMode === "liuyao" && manualCastingEnabled ? { liuyaoLineThrows: manualCoinThrows } : undefined;
+    buildFromBirth(birth, liuyaoOptions);
   }
 
   return (
@@ -178,6 +253,86 @@ export default function BirthForm() {
 
       </section>
 
+      {appMode === "liuyao" ? (
+        <section className="space-y-2 rounded-md p-2 ink-soft hud-corners">
+          <div className="flex items-center justify-between gap-2">
+            <div className="text-[11px] font-semibold uppercase tracking-wide surface-label">六爻起卦</div>
+            <span className="hud-badge" data-tone={manualCastingEnabled ? "accent" : undefined}>
+              {manualCastingEnabled ? "手动投币模式" : "自动投币模式"}
+            </span>
+          </div>
+
+          <label className="flex items-center justify-between gap-2 rounded-md border border-slate-600/70 bg-slate-950/55 px-2 py-2 text-sm">
+            <div className="flex flex-col">
+              <span className="surface-value">手动投币 6 爻</span>
+              <span className="text-[11px] surface-help">自下而上：初爻 → 上爻（每爻 3 枚）</span>
+            </div>
+            <input
+              type="checkbox"
+              className="h-4 w-4 rounded border-zinc-300 dark:border-slate-500"
+              checked={manualCastingEnabled}
+              onChange={(e) => setManualCastingEnabled(e.target.checked)}
+            />
+          </label>
+
+          {manualCastingEnabled ? (
+            <div className="space-y-1.5 rounded-md border border-slate-600/70 bg-slate-950/55 p-2">
+              <div className="flex items-center justify-between gap-2">
+                <div className="text-[11px] surface-help">点按硬币切换正/反，先读卦象，再看动静与世应。</div>
+                <button
+                  type="button"
+                  className="hud-chip motion-chip"
+                  onClick={onResetManualCoins}
+                >
+                  重置
+                </button>
+              </div>
+
+              {manualLineThrows.map((line, lineIdx) => {
+                const preview = manualPreviews[lineIdx];
+                if (!preview) return null;
+                return (
+                  <div key={`manual-line-${lineIdx + 1}`} className="rounded-md border border-slate-600/70 bg-slate-950/60 px-2 py-1.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-xs surface-value">
+                        第{lineIdx + 1}爻（{LINE_NAMES[lineIdx]}爻）
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="liuyao-line-glyph text-sm" data-yinyang={preview.yinYang}>
+                          {yaoSymbol(preview.yinYang)}
+                        </span>
+                        <span className="hud-badge" data-tone={preview.moving ? "risk" : undefined}>
+                          {preview.label}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="mt-1.5 flex items-center gap-1.5">
+                      {line.map((face, coinIdx) => (
+                        <button
+                          key={`manual-line-${lineIdx + 1}-coin-${coinIdx + 1}`}
+                          type="button"
+                          className="liuyao-coin-toggle"
+                          data-face={face}
+                          onClick={() => onToggleManualCoin(lineIdx, coinIdx)}
+                          aria-label={`第${lineIdx + 1}爻第${coinIdx + 1}枚硬币，当前${coinFaceText(face)}`}
+                        >
+                          {coinFaceText(face)}
+                        </button>
+                      ))}
+                      <div className="ml-auto text-[11px] surface-help">合计：{preview.sum}</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="text-[11px] surface-help">
+              未启用手动投币时，将按出生信息使用可复现的确定性投掷序列（trace 可追溯）。
+            </div>
+          )}
+        </section>
+      ) : null}
+
       <details className="rounded-md p-2 ink-soft hud-corners">
         <summary className="cursor-pointer select-none text-[11px] font-semibold uppercase tracking-wide surface-label">
           二级抽屉 · 高级参数
@@ -204,7 +359,7 @@ export default function BirthForm() {
 
       <button
         type="submit"
-        className="w-full rounded-md bg-sky-600 px-2 py-2 text-sm font-semibold text-white transition-colors hover:bg-sky-700 disabled:cursor-not-allowed disabled:bg-sky-800 disabled:text-slate-100"
+        className="hud-primary-button"
         disabled={isBuilding || !datetimeValue}
       >
         {isBuilding ? "排盘中…" : "排盘"}

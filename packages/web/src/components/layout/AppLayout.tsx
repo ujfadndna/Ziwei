@@ -5,6 +5,7 @@ import { usePersistentNumber } from "../../utils/usePersistentNumber";
 import AppErrorBoundary from "../common/AppErrorBoundary";
 import BaziCanvas from "./BaziCanvas";
 import ChartCanvas from "./ChartCanvas";
+import LiuyaoCanvas from "./LiuyaoCanvas";
 import QimenCanvas from "./QimenCanvas";
 import ControlPanel from "./ControlPanel";
 import Inspector from "./Inspector";
@@ -18,6 +19,7 @@ export default function AppLayout() {
   const chart = useChartStore((s) => s.chart);
   const baziChart = useChartStore((s) => s.baziChart);
   const qimenChart = useChartStore((s) => s.qimenChart);
+  const liuyaoChart = useChartStore((s) => s.liuyaoChart);
   const isBuilding = useChartStore((s) => s.isBuilding);
   const buildError = useChartStore((s) => s.buildError);
   const ruleSetId = useChartStore((s) => s.ruleSetId);
@@ -81,8 +83,11 @@ export default function AppLayout() {
     if (appMode === "qimen") {
       return qimenChart ? "奇门盘已生成" : "尚未生成奇门盘";
     }
+    if (appMode === "liuyao") {
+      return liuyaoChart ? "六爻盘已生成" : "尚未生成六爻盘";
+    }
     return selectionSummary;
-  }, [appMode, baziChart, qimenChart, selectionSummary]);
+  }, [appMode, baziChart, liuyaoChart, qimenChart, selectionSummary]);
 
   const startHorizontalResize = useCallback(
     (
@@ -129,7 +134,13 @@ export default function AppLayout() {
             <div className="shrink-0 font-semibold tracking-tight">Ziwei Web</div>
             <div className="min-w-0 text-xs surface-help">
               <span className="truncate">
-                {appMode === "ziwei" ? `规则集：${ruleSetId}` : appMode === "bazi" ? "系统：八字排盘" : "系统：奇门遁甲"}
+                {appMode === "ziwei"
+                  ? `规则集：${ruleSetId}`
+                  : appMode === "bazi"
+                    ? "系统：八字排盘"
+                    : appMode === "qimen"
+                      ? "系统：奇门遁甲"
+                      : "系统：文王纳甲六爻"}
               </span>
               <span className="mx-2 surface-divider">·</span>
               <span>{modeSummary}</span>
@@ -180,6 +191,14 @@ export default function AppLayout() {
               >
                 奇门
               </button>
+              <button
+                type="button"
+                className={["hud-chip motion-chip", appMode === "liuyao" ? "is-active" : ""].join(" ")}
+                onClick={() => setAppMode("liuyao")}
+                title="文王纳甲六爻排盘视图"
+              >
+                六爻
+              </button>
             </div>
             <div className="rounded-md p-0.5 ink-soft motion-tab-group" aria-label="主题切换">
               <button
@@ -208,9 +227,19 @@ export default function AppLayout() {
               </button>
               <button
                 type="button"
+                className={["hud-chip motion-chip", resolvedTheme === "liuyao" && themePreference !== "auto" ? "is-active" : ""].join(
+                  " "
+                )}
+                onClick={() => setTheme("liuyao")}
+                title="切换到青玉主题（六爻）"
+              >
+                青玉色
+              </button>
+              <button
+                type="button"
                 className={["hud-chip motion-chip", themePreference === "auto" ? "is-active" : ""].join(" ")}
                 onClick={() => resetThemePreference()}
-                title="按系统自动选择主题：紫微/八字/奇门"
+                title="按系统自动选择主题：紫微/八字/奇门/六爻"
               >
                 自动
               </button>
@@ -259,8 +288,26 @@ export default function AppLayout() {
           <ControlPanel width={leftPanelWidth} onResizeStart={onLeftPanelResizeStart} />
         </AppErrorBoundary>
         <div className="flex-1 min-w-0 h-full motion-view-stage">
-          <AppErrorBoundary scope={appMode === "ziwei" ? "ChartCanvas" : appMode === "bazi" ? "BaziCanvas" : "QimenCanvas"}>
-            {appMode === "ziwei" ? <ChartCanvas /> : appMode === "bazi" ? <BaziCanvas /> : <QimenCanvas />}
+          <AppErrorBoundary
+            scope={
+              appMode === "ziwei"
+                ? "ChartCanvas"
+                : appMode === "bazi"
+                  ? "BaziCanvas"
+                  : appMode === "qimen"
+                    ? "QimenCanvas"
+                    : "LiuyaoCanvas"
+            }
+          >
+            {appMode === "ziwei" ? (
+              <ChartCanvas />
+            ) : appMode === "bazi" ? (
+              <BaziCanvas />
+            ) : appMode === "qimen" ? (
+              <QimenCanvas />
+            ) : (
+              <LiuyaoCanvas />
+            )}
           </AppErrorBoundary>
         </div>
         {showInspector && appMode === "ziwei" ? (

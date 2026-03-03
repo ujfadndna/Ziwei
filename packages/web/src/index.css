@@ -161,6 +161,27 @@
     --scene-haze: rgba(90, 150, 142, 0.08);
   }
 
+  :root[data-theme="liuyao"] {
+    --bg: #060b0b;
+    --bgMid: #0d1615;
+    --bgEdge: #040706;
+    --panel: rgba(14, 24, 22, 0.8);
+    --panelSoft: rgba(13, 22, 20, 0.64);
+    --panelScrim: rgba(8, 15, 14, 0.86);
+    --border: rgba(102, 138, 129, 0.35);
+    --text: #e2efea;
+    --textMuted: #bfd5ce;
+    --textFaint: #8eafa6;
+    --accent: #2ea88d;
+    --accent2: #7ac1b2;
+    --warn: #cc4d39;
+    --bad: #da5943;
+    --focusRing: rgba(71, 185, 157, 0.95);
+    --scene-haze: rgba(66, 141, 125, 0.09);
+    --scene-light-leak-a: rgba(57, 161, 136, 0.08);
+    --scene-light-leak-b: rgba(176, 74, 58, 0.05);
+  }
+
   html {
     @apply h-full antialiased;
     background: var(--bgEdge);
@@ -641,6 +662,29 @@
     color: color-mix(in srgb, var(--warn) 88%, #fff 12%);
   }
 
+  .hud-primary-button {
+    @apply w-full rounded-md border px-2 py-2 text-sm font-semibold;
+    border-color: color-mix(in srgb, var(--accent) 60%, var(--border));
+    color: color-mix(in srgb, var(--text) 90%, #fff 10%);
+    background: color-mix(in srgb, var(--accent) 78%, var(--panel) 22%);
+    transition:
+      border-color var(--motion-hover) var(--motion-ease),
+      background-color var(--motion-hover) var(--motion-ease),
+      color var(--motion-hover) var(--motion-ease);
+  }
+
+  .hud-primary-button:hover {
+    border-color: color-mix(in srgb, var(--accent) 74%, var(--border));
+    background: color-mix(in srgb, var(--accent) 86%, var(--panel) 14%);
+  }
+
+  .hud-primary-button:disabled {
+    cursor: not-allowed;
+    border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+    background: color-mix(in srgb, var(--accent) 52%, var(--panel) 48%);
+    color: color-mix(in srgb, var(--text) 72%, transparent);
+  }
+
   .hud-badge {
     @apply inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide;
     border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
@@ -668,6 +712,67 @@
     border-color: color-mix(in srgb, var(--bad) 56%, transparent);
     color: color-mix(in srgb, var(--bad) 86%, #fff 14%);
     background: color-mix(in srgb, var(--panel) 76%, var(--bad) 24%);
+  }
+
+  .liuyao-coin-toggle {
+    @apply inline-flex items-center justify-center rounded-md border px-2 py-1 text-[11px] font-semibold;
+    min-width: 48px;
+    border-color: color-mix(in srgb, var(--border) 92%, transparent);
+    background: color-mix(in srgb, var(--panel) 88%, #040709);
+    color: var(--textMuted);
+    transition:
+      border-color var(--motion-hover) var(--motion-ease),
+      color var(--motion-hover) var(--motion-ease),
+      background-color var(--motion-hover) var(--motion-ease);
+  }
+
+  .liuyao-coin-toggle[data-face="heads"] {
+    border-color: color-mix(in srgb, var(--accent) 62%, var(--border));
+    color: color-mix(in srgb, var(--accent) 88%, #fff 12%);
+    background: color-mix(in srgb, var(--panel) 72%, var(--accent) 28%);
+  }
+
+  .liuyao-coin-toggle[data-face="tails"] {
+    border-color: color-mix(in srgb, var(--border) 90%, transparent);
+    color: var(--textMuted);
+  }
+
+  .liuyao-coin-toggle:hover {
+    border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+    color: var(--text);
+  }
+
+  .liuyao-line-card {
+    border: 1px solid color-mix(in srgb, var(--border) 92%, transparent);
+    background: color-mix(in srgb, var(--panelScrim) 92%, #05080b 8%);
+  }
+
+  .liuyao-line-card[data-shi="1"] {
+    border-color: color-mix(in srgb, var(--accent) 56%, var(--border));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent);
+  }
+
+  .liuyao-line-card[data-moving="1"] {
+    border-color: color-mix(in srgb, var(--bad) 54%, var(--border));
+  }
+
+  .liuyao-line-glyph {
+    font-family:
+      "Noto Sans Mono CJK SC",
+      "SFMono-Regular",
+      Menlo,
+      Consolas,
+      monospace;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+
+  .liuyao-line-glyph[data-yinyang="阳"] {
+    color: #f8fafc;
+  }
+
+  .liuyao-line-glyph[data-yinyang="阴"] {
+    color: #94a3b8;
   }
 
   .motion-chip {

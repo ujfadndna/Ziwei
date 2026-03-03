@@ -146,6 +146,24 @@ export {
   DEFAULT_72_JU_TABLE,
 } from "./systems/qimen";
 
+// 六爻（文王纳甲）
+export {
+  buildLiuyaoChart,
+  DEFAULT_LIUYAO_RULESET,
+  registerLiuyaoHexagrams64Table,
+  registerLiuyaoNajiaTable,
+  registerLiuyaoXunkongTable,
+  registerLiuyaoSixSpiritsTable,
+  getLiuyaoHexagrams64Table,
+  getLiuyaoNajiaTable,
+  getLiuyaoXunkongTable,
+  getLiuyaoSixSpiritsTable,
+  DEFAULT_HEXAGRAMS64_TABLE,
+  DEFAULT_NAJIA_TABLE,
+  DEFAULT_XUNKONG_TABLE,
+  DEFAULT_SIX_SPIRITS_TABLE,
+} from "./systems/liuyao";
+
 // 规则引擎
 export * from "./rule-engine";
 

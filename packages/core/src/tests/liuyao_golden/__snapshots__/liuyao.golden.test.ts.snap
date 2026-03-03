@@ -1,0 +1,1077 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`liuyao golden fixtures > matches golden snapshot: g01-all-young-yang 1`] = `
+{
+  "baseHexagram": {
+    "id": 1,
+    "lowerTrigram": "乾",
+    "name": "乾为天",
+    "palace": "乾",
+    "shiLine": 6,
+    "upperTrigram": "乾",
+    "yingLine": 3,
+  },
+  "changedHexagram": {
+    "id": 1,
+    "lowerTrigram": "乾",
+    "name": "乾为天",
+    "palace": "乾",
+    "shiLine": 6,
+    "upperTrigram": "乾",
+    "yingLine": 3,
+  },
+  "lineDigest": [
+    {
+      "base": {
+        "branch": "子",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "子孙",
+        "spirit": "勾陈",
+      },
+      "changed": {
+        "branch": "子",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "子孙",
+        "spirit": "勾陈",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 1,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "寅",
+        "element": "木",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "妻财",
+        "spirit": "腾蛇",
+      },
+      "changed": {
+        "branch": "寅",
+        "element": "木",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "妻财",
+        "spirit": "腾蛇",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 2,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "辰",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "应",
+          "阳",
+        ],
+        "relative": "父母",
+        "spirit": "白虎",
+      },
+      "changed": {
+        "branch": "辰",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "应",
+          "阳",
+        ],
+        "relative": "父母",
+        "spirit": "白虎",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 3,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "午",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "玄武",
+      },
+      "changed": {
+        "branch": "午",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "玄武",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 4,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "申",
+        "element": "金",
+        "isVoid": true,
+        "markers": [
+          "空",
+          "阳",
+        ],
+        "relative": "兄弟",
+        "spirit": "青龙",
+      },
+      "changed": {
+        "branch": "申",
+        "element": "金",
+        "isVoid": true,
+        "markers": [
+          "空",
+          "阳",
+        ],
+        "relative": "兄弟",
+        "spirit": "青龙",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 5,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "戌",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阳",
+        ],
+        "relative": "父母",
+        "spirit": "朱雀",
+      },
+      "changed": {
+        "branch": "戌",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阳",
+        ],
+        "relative": "父母",
+        "spirit": "朱雀",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 6,
+      "moving": false,
+      "yinYang": "阳",
+    },
+  ],
+  "lunarInfo": {
+    "dayChen": "寅",
+    "ganzhi": {
+      "day": "戊寅",
+      "month": "乙丑",
+      "time": "丙辰",
+      "year": "癸卯",
+    },
+    "monthBuild": "丑",
+  },
+  "rulesApplied": {
+    "castingMethod": "coin_3",
+    "najiaTableId": "default_najia_v1",
+    "shiYingTableId": "default_shiying_v1",
+    "sixSpiritsRule": "byDayStem_default",
+    "timezone": "UTC+08:00",
+    "xunkongRule": "default_xunkong_v1",
+    "ziHourRollover": "lateZi",
+  },
+  "xunkong": {
+    "dayStemBranch": "戊寅",
+    "voidBranches": [
+      "申",
+      "酉",
+    ],
+    "xun": "甲戌",
+  },
+}
+`;
+
+exports[`liuyao golden fixtures > matches golden snapshot: g02-all-young-yin 1`] = `
+{
+  "baseHexagram": {
+    "id": 2,
+    "lowerTrigram": "坤",
+    "name": "坤为地",
+    "palace": "坤",
+    "shiLine": 6,
+    "upperTrigram": "坤",
+    "yingLine": 3,
+  },
+  "changedHexagram": {
+    "id": 2,
+    "lowerTrigram": "坤",
+    "name": "坤为地",
+    "palace": "坤",
+    "shiLine": 6,
+    "upperTrigram": "坤",
+    "yingLine": 3,
+  },
+  "lineDigest": [
+    {
+      "base": {
+        "branch": "未",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "青龙",
+      },
+      "changed": {
+        "branch": "未",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "青龙",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 1,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "巳",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "父母",
+        "spirit": "朱雀",
+      },
+      "changed": {
+        "branch": "巳",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "父母",
+        "spirit": "朱雀",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 2,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "卯",
+        "element": "木",
+        "isVoid": true,
+        "markers": [
+          "应",
+          "空",
+          "阴",
+        ],
+        "relative": "官鬼",
+        "spirit": "勾陈",
+      },
+      "changed": {
+        "branch": "卯",
+        "element": "木",
+        "isVoid": true,
+        "markers": [
+          "应",
+          "空",
+          "阴",
+        ],
+        "relative": "官鬼",
+        "spirit": "勾陈",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 3,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "丑",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "腾蛇",
+      },
+      "changed": {
+        "branch": "丑",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "腾蛇",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 4,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "亥",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "妻财",
+        "spirit": "白虎",
+      },
+      "changed": {
+        "branch": "亥",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "妻财",
+        "spirit": "白虎",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 5,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "酉",
+        "element": "金",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阴",
+        ],
+        "relative": "子孙",
+        "spirit": "玄武",
+      },
+      "changed": {
+        "branch": "酉",
+        "element": "金",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阴",
+        ],
+        "relative": "子孙",
+        "spirit": "玄武",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 6,
+      "moving": false,
+      "yinYang": "阴",
+    },
+  ],
+  "lunarInfo": {
+    "dayChen": "辰",
+    "ganzhi": {
+      "day": "甲辰",
+      "month": "丙寅",
+      "time": "己巳",
+      "year": "甲辰",
+    },
+    "monthBuild": "寅",
+  },
+  "rulesApplied": {
+    "castingMethod": "coin_3",
+    "najiaTableId": "default_najia_v1",
+    "shiYingTableId": "default_shiying_v1",
+    "sixSpiritsRule": "byDayStem_default",
+    "timezone": "UTC+08:00",
+    "xunkongRule": "default_xunkong_v1",
+    "ziHourRollover": "lateZi",
+  },
+  "xunkong": {
+    "dayStemBranch": "甲辰",
+    "voidBranches": [
+      "寅",
+      "卯",
+    ],
+    "xun": "甲辰",
+  },
+}
+`;
+
+exports[`liuyao golden fixtures > matches golden snapshot: g03-mixed-moving-lines 1`] = `
+{
+  "baseHexagram": {
+    "id": 64,
+    "lowerTrigram": "坎",
+    "name": "火水未济",
+    "palace": "离",
+    "shiLine": 3,
+    "upperTrigram": "离",
+    "yingLine": 6,
+  },
+  "changedHexagram": {
+    "id": 41,
+    "lowerTrigram": "兑",
+    "name": "山泽损",
+    "palace": "艮",
+    "shiLine": 3,
+    "upperTrigram": "艮",
+    "yingLine": 6,
+  },
+  "lineDigest": [
+    {
+      "base": {
+        "branch": "寅",
+        "element": "木",
+        "isVoid": false,
+        "markers": [
+          "动",
+          "阴",
+        ],
+        "relative": "父母",
+        "spirit": "玄武",
+      },
+      "changed": {
+        "branch": "巳",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "变",
+          "阳",
+        ],
+        "relative": "父母",
+        "spirit": "玄武",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 1,
+      "moving": true,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "辰",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "子孙",
+        "spirit": "青龙",
+      },
+      "changed": {
+        "branch": "卯",
+        "element": "木",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "青龙",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 2,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "午",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "朱雀",
+      },
+      "changed": {
+        "branch": "丑",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "朱雀",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 3,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "酉",
+        "element": "金",
+        "isVoid": true,
+        "markers": [
+          "动",
+          "空",
+          "阳",
+        ],
+        "relative": "妻财",
+        "spirit": "勾陈",
+      },
+      "changed": {
+        "branch": "戌",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "变",
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "勾陈",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 4,
+      "moving": true,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "未",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "子孙",
+        "spirit": "腾蛇",
+      },
+      "changed": {
+        "branch": "子",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "妻财",
+        "spirit": "腾蛇",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 5,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "巳",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "应",
+          "阳",
+        ],
+        "relative": "兄弟",
+        "spirit": "白虎",
+      },
+      "changed": {
+        "branch": "寅",
+        "element": "木",
+        "isVoid": false,
+        "markers": [
+          "应",
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "白虎",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 6,
+      "moving": false,
+      "yinYang": "阳",
+    },
+  ],
+  "lunarInfo": {
+    "dayChen": "未",
+    "ganzhi": {
+      "day": "癸未",
+      "month": "丁卯",
+      "time": "壬子",
+      "year": "甲辰",
+    },
+    "monthBuild": "卯",
+  },
+  "rulesApplied": {
+    "castingMethod": "coin_3",
+    "najiaTableId": "default_najia_v1",
+    "shiYingTableId": "default_shiying_v1",
+    "sixSpiritsRule": "byDayStem_default",
+    "timezone": "UTC+08:00",
+    "xunkongRule": "default_xunkong_v1",
+    "ziHourRollover": "lateZi",
+  },
+  "xunkong": {
+    "dayStemBranch": "癸未",
+    "voidBranches": [
+      "申",
+      "酉",
+    ],
+    "xun": "甲戌",
+  },
+}
+`;
+
+exports[`liuyao golden fixtures > matches golden snapshot: g04-balanced-static 1`] = `
+{
+  "baseHexagram": {
+    "id": 63,
+    "lowerTrigram": "离",
+    "name": "水火既济",
+    "palace": "坎",
+    "shiLine": 3,
+    "upperTrigram": "坎",
+    "yingLine": 6,
+  },
+  "changedHexagram": {
+    "id": 63,
+    "lowerTrigram": "离",
+    "name": "水火既济",
+    "palace": "坎",
+    "shiLine": 3,
+    "upperTrigram": "坎",
+    "yingLine": 6,
+  },
+  "lineDigest": [
+    {
+      "base": {
+        "branch": "卯",
+        "element": "木",
+        "isVoid": true,
+        "markers": [
+          "空",
+          "阳",
+        ],
+        "relative": "子孙",
+        "spirit": "青龙",
+      },
+      "changed": {
+        "branch": "卯",
+        "element": "木",
+        "isVoid": true,
+        "markers": [
+          "空",
+          "阳",
+        ],
+        "relative": "子孙",
+        "spirit": "青龙",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 1,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "丑",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "官鬼",
+        "spirit": "朱雀",
+      },
+      "changed": {
+        "branch": "丑",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "官鬼",
+        "spirit": "朱雀",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 2,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "亥",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阳",
+        ],
+        "relative": "兄弟",
+        "spirit": "勾陈",
+      },
+      "changed": {
+        "branch": "亥",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阳",
+        ],
+        "relative": "兄弟",
+        "spirit": "勾陈",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 3,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "申",
+        "element": "金",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "父母",
+        "spirit": "腾蛇",
+      },
+      "changed": {
+        "branch": "申",
+        "element": "金",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "父母",
+        "spirit": "腾蛇",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 4,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "戌",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "白虎",
+      },
+      "changed": {
+        "branch": "戌",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "白虎",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 5,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "子",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "应",
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "玄武",
+      },
+      "changed": {
+        "branch": "子",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "应",
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "玄武",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 6,
+      "moving": false,
+      "yinYang": "阴",
+    },
+  ],
+  "lunarInfo": {
+    "dayChen": "巳",
+    "ganzhi": {
+      "day": "乙巳",
+      "month": "庚午",
+      "time": "己卯",
+      "year": "甲辰",
+    },
+    "monthBuild": "午",
+  },
+  "rulesApplied": {
+    "castingMethod": "coin_3",
+    "najiaTableId": "default_najia_v1",
+    "shiYingTableId": "default_shiying_v1",
+    "sixSpiritsRule": "byDayStem_default",
+    "timezone": "UTC+08:00",
+    "xunkongRule": "default_xunkong_v1",
+    "ziHourRollover": "lateZi",
+  },
+  "xunkong": {
+    "dayStemBranch": "乙巳",
+    "voidBranches": [
+      "寅",
+      "卯",
+    ],
+    "xun": "甲辰",
+  },
+}
+`;
+
+exports[`liuyao golden fixtures > matches golden snapshot: g05-cross-timezone 1`] = `
+{
+  "baseHexagram": {
+    "id": 60,
+    "lowerTrigram": "兑",
+    "name": "水泽节",
+    "palace": "坎",
+    "shiLine": 1,
+    "upperTrigram": "坎",
+    "yingLine": 4,
+  },
+  "changedHexagram": {
+    "id": 17,
+    "lowerTrigram": "震",
+    "name": "泽雷随",
+    "palace": "震",
+    "shiLine": 3,
+    "upperTrigram": "兑",
+    "yingLine": 6,
+  },
+  "lineDigest": [
+    {
+      "base": {
+        "branch": "巳",
+        "element": "火",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阳",
+        ],
+        "relative": "妻财",
+        "spirit": "玄武",
+      },
+      "changed": {
+        "branch": "子",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "父母",
+        "spirit": "玄武",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 1,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "卯",
+        "element": "木",
+        "isVoid": false,
+        "markers": [
+          "动",
+          "阳",
+        ],
+        "relative": "子孙",
+        "spirit": "青龙",
+      },
+      "changed": {
+        "branch": "寅",
+        "element": "木",
+        "isVoid": false,
+        "markers": [
+          "变",
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "青龙",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 2,
+      "moving": true,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "丑",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "官鬼",
+        "spirit": "朱雀",
+      },
+      "changed": {
+        "branch": "辰",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "世",
+          "阴",
+        ],
+        "relative": "妻财",
+        "spirit": "朱雀",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 3,
+      "moving": false,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "申",
+        "element": "金",
+        "isVoid": false,
+        "markers": [
+          "应",
+          "动",
+          "阴",
+        ],
+        "relative": "父母",
+        "spirit": "勾陈",
+      },
+      "changed": {
+        "branch": "亥",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "变",
+          "阳",
+        ],
+        "relative": "父母",
+        "spirit": "勾陈",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 4,
+      "moving": true,
+      "yinYang": "阴",
+    },
+    {
+      "base": {
+        "branch": "戌",
+        "element": "土",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "腾蛇",
+      },
+      "changed": {
+        "branch": "酉",
+        "element": "金",
+        "isVoid": false,
+        "markers": [
+          "阳",
+        ],
+        "relative": "官鬼",
+        "spirit": "腾蛇",
+      },
+      "changedYinYang": "阳",
+      "lineIndex": 5,
+      "moving": false,
+      "yinYang": "阳",
+    },
+    {
+      "base": {
+        "branch": "子",
+        "element": "水",
+        "isVoid": false,
+        "markers": [
+          "阴",
+        ],
+        "relative": "兄弟",
+        "spirit": "白虎",
+      },
+      "changed": {
+        "branch": "未",
+        "element": "土",
+        "isVoid": true,
+        "markers": [
+          "应",
+          "空",
+          "阴",
+        ],
+        "relative": "妻财",
+        "spirit": "白虎",
+      },
+      "changedYinYang": "阴",
+      "lineIndex": 6,
+      "moving": false,
+      "yinYang": "阴",
+    },
+  ],
+  "lunarInfo": {
+    "dayChen": "巳",
+    "ganzhi": {
+      "day": "癸巳",
+      "month": "乙亥",
+      "time": "癸丑",
+      "year": "甲辰",
+    },
+    "monthBuild": "亥",
+  },
+  "rulesApplied": {
+    "castingMethod": "coin_3",
+    "najiaTableId": "default_najia_v1",
+    "shiYingTableId": "default_shiying_v1",
+    "sixSpiritsRule": "byDayStem_default",
+    "timezone": "America/New_York",
+    "xunkongRule": "default_xunkong_v1",
+    "ziHourRollover": "lateZi",
+  },
+  "xunkong": {
+    "dayStemBranch": "癸巳",
+    "voidBranches": [
+      "午",
+      "未",
+    ],
+    "xun": "甲申",
+  },
+}
+`;
